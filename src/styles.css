@@ -3,7 +3,7 @@ html, body { height: 100%; }
 body { 
     box-sizing: border-box; 
     margin: 0; 
-    padding:44px 70px; 
+    padding:0; 
     font-family:"HelveticaNeue", sans-serif; 
     text-decoration: none;
 }
@@ -11,8 +11,8 @@ body {
 @font-face {
     font-family: "HelveticaNeue";
     src: local("HelveticaNeue"), url(./assets/Fonts/HelveticaNeue-01.ttf) format("truetype");
-    src: local("HelveticaNeue"), url(./assets/Fonts/HelveticaNeue-Bold-02.ttf) format("truetype");
-    src: local("HelveticaNeue"), url(./assets/Fonts/HelveticaNeue-BoldItalic-04.ttf) format("truetype");
+    /* src: local("HelveticaNeue"), url(./assets/Fonts/HelveticaNeue-Bold-02.ttf) format("truetype"); */
+    /* src: local("HelveticaNeue"), url(./assets/Fonts/HelveticaNeue-BoldItalic-04.ttf) format("truetype");
     src: local("HelveticaNeue"), url(./assets/Fonts/HelveticaNeue-CondensedBlack-10.ttf) format("truetype");
     src: local("HelveticaNeue"), url(./assets/Fonts/HelveticaNeue-CondensedBold-05.ttf) format("truetype");
     src: local("HelveticaNeue"), url(./assets/Fonts/HelveticaNeue-Italic-03.ttf) format("truetype");
@@ -23,7 +23,7 @@ body {
     src: local("HelveticaNeue"), url(./assets/Fonts/HelveticaNeue-Thin-13.ttf) format("truetype");
     src: local("HelveticaNeue"), url(./assets/Fonts/HelveticaNeue-ThinItalic-14.ttf) format("truetype");
     src: local("HelveticaNeue"), url(./assets/Fonts/HelveticaNeue-UltraLight-06.ttf) format("truetype");
-    src: local("HelveticaNeue"), url(./assets/Fonts/HelveticaNeue-UltraLightItalic-07.ttf) format("truetype");
+    src: local("HelveticaNeue"), url(./assets/Fonts/HelveticaNeue-UltraLightItalic-07.ttf) format("truetype"); */
 
 }
 

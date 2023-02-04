@@ -1,14 +1,5 @@
-
-label{
-    font-family:"HelveticaNeue", sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 21;
-    color: #000000;
-}
-small{
-    font-size: 14px;
-    font-weight: 400;
-    color: #2E2E2E;
-}
+/* @font-face {
+    font-family: "HelveticaNeue";
+    src: local("HelveticaNeue"), url(/src/assets/Fonts/HelveticaNeue-01.ttf) format("truetype");
+} */
 

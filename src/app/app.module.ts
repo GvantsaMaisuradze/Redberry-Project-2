@@ -10,6 +10,7 @@ import { PersonalInfoComponent } from './user/personal-info/personal-info.compon
 import { ExperienceComponent } from './user/experience/experience.component';
 import { EducationComponent } from './user/education/education.component';
 import { HomeVwComponent } from './view/home-vw/home-vw.component';
+import { UserInfoAreaComponent } from './user/user-info-area/user-info-area.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HomeVwComponent } from './view/home-vw/home-vw.component';
     UserComponent,
     PersonalInfoComponent,
     ExperienceComponent,
-    EducationComponent
+    EducationComponent,
+    UserInfoAreaComponent
   ],
   imports: [
     BrowserModule,

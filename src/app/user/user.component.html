@@ -1,1 +1,16 @@
-<p>user works!</p>
+<section class="col-md-12 d-flex flex-wrap">
+    <div class="information-area col-md-7 d-flex ">
+        <div class="user-icon">
+            <button (click)="goBackToHomePage()"
+            class="user-icon-btn">
+                <img src="/assets/Images/Vector.svg" alt="">
+            </button>
+        </div>
+        <div class="col-md-11">
+            <router-outlet></router-outlet>
+        </div> 
+    </div> 
+        <div class="col-md-5 user-info__area">
+            <app-user-info-area></app-user-info-area>
+        </div>
+</section>
