@@ -1,0 +1,23 @@
+:host {
+    width: 100%;
+    height: 100%;
+}
+body{
+    background:url(/assets/Images/shutterstock_2189773743\ 1.svg)
+}
+.home-logo{
+    padding-bottom: 30px;
+    border-bottom:1px solid #1A1A1A;
+}
+.home-middle{
+    text-align: center;
+    margin-top: 400px;
+}
+.btn{
+    background-color: #1A1A1A;
+    padding: 18px 10px;
+}
+a{
+    font-size: 17px;
+    font-weight: 500;
+}
