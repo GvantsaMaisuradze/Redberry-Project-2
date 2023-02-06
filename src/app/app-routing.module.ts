@@ -9,12 +9,11 @@ import { UserComponent } from './user/user.component';
 const routes: Routes = [
   {path:'',component:HomeVwComponent},
   {path:'user',component:UserComponent,
-    children:[
-      {path:'',component:PersonalInfoComponent},
-      {path:'experience',component:ExperienceComponent},
-      {path:'education',component:EducationComponent}
-    ]
-},
+  children:[  
+    {path:'',component:PersonalInfoComponent},
+    {path:'experience',component:ExperienceComponent},
+    {path:'education',component:EducationComponent}
+  ]},
 ];
 
 @NgModule({
