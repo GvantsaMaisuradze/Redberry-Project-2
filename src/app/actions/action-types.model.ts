@@ -1,1 +1,0 @@
-export enum UserActionTypes{ addUserInfoData = "addUserInfoData", addUserInfo = "addUserInfo"};

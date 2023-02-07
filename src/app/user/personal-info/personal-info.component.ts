@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AddInfoService } from 'src/app/services/add-info.service';
 
 @Component({
   selector: 'app-personal-info',
@@ -10,13 +9,10 @@ import { AddInfoService } from 'src/app/services/add-info.service';
 })
 export class PersonalInfoComponent implements OnInit {
   userRegistration!:FormGroup;
-  constructor(private router:Router , private userInfo:AddInfoService) { }
+  constructor(private router:Router ) { }
 
   ngOnInit(): void {
     this.createNewUser();
-    this.userInfo.getUserDataStore().subscribe((response:any)=>{
-      console.log(response)
-    })
   }
   onImageUpload(uploadInput:HTMLInputElement){
     uploadInput.click();
@@ -45,7 +41,6 @@ export class PersonalInfoComponent implements OnInit {
  }
  onFormSubmit(){
   console.log(this.userRegistration.value);
-  this.userInfo.addUserInfo(this.userRegistration.value)
   // this.router.navigate(['experience'])
 
 }
