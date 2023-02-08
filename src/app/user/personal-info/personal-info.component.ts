@@ -14,7 +14,7 @@ export class PersonalInfoComponent implements OnInit {
   ngOnInit(): void {
     this.createNewUser();
     this.registrateUser.getUserInformationStore().subscribe((response:any) =>{
-      console.log(response);
+      console.log(response)
     })
   }
   onImageUpload(uploadInput:HTMLInputElement){
@@ -45,6 +45,7 @@ export class PersonalInfoComponent implements OnInit {
  onFormSubmit(){
   // console.log(this.userRegistration.value);
   this.registrateUser.addPersonalInfo(this.userRegistration.value)
+  
   // this.router.navigate(['experience'])
 
 }

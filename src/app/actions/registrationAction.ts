@@ -14,7 +14,7 @@ export class addUserData extends BaseAction{
         super.type = RegistrationActionsTypes.addUserData
         if(localStorage['userInformationState']!=undefined){
             super.payload = JSON.parse(localStorage['userInformationState'])
-        }
+        }else
         super.payload = null;
     }
 } 

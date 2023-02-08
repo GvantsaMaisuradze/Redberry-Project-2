@@ -6,8 +6,8 @@ import { PersonalInfo } from "../model/PersonalInfo.model";
 import { UserInformationData } from "../model/UserInformationData.model";
 
 export class RegistrateInfoReducer {
-    static state:UserInformationData = new UserInformationData()
-
+    static state:UserInformationData = new UserInformationData();
+    
     public static Reduce(state=RegistrateInfoReducer.state,action:BaseAction){
         var tmp = new UserInformationData()
         switch(action.type){
