@@ -1,0 +1,1 @@
+export enum RegistrationActionsTypes { addUserData ="addUserData" ,addPersonalInfo = "addPersonalInfo", addExperience = "addExperience" , addEducation = "addEducation"}

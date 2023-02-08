@@ -11,6 +11,9 @@ import { ExperienceComponent } from './user/experience/experience.component';
 import { EducationComponent } from './user/education/education.component';
 import { HomeVwComponent } from './view/home-vw/home-vw.component';
 import { UserInfoAreaComponent } from './user/user-info-area/user-info-area.component';
+import { ActionReducer, StoreModule } from '@ngrx/store';
+import { RegistrateInfoReducer } from './state-manager/RegistrateInfo.reducer';
+import { UserInformationData } from './model/UserInformationData.model';
 
 
 @NgModule({
@@ -29,6 +32,9 @@ import { UserInfoAreaComponent } from './user/user-info-area/user-info-area.comp
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    StoreModule.forRoot({
+      userInformation:(RegistrateInfoReducer.Reduce as ActionReducer<UserInformationData>)
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
