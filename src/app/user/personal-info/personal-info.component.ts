@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RegistrateUserService } from 'src/app/services/registrate-user.service';
 
 @Component({
@@ -8,11 +9,11 @@ import { RegistrateUserService } from 'src/app/services/registrate-user.service'
   styleUrls: ['./personal-info.component.css']
 })
 export class PersonalInfoComponent implements OnInit {
-  userRegistration!:FormGroup;
-  constructor( private registrateUser:RegistrateUserService ) { }
+  personalInfoRegistration!:FormGroup;
+  constructor(private router:Router, private registrateUser:RegistrateUserService ) { }
 
   ngOnInit(): void {
-    this.createNewUser();
+    this.createNewUserPersonalInfo();
     this.registrateUser.getUserInformationStore().subscribe((response:any) =>{
       console.log(response)
     })
@@ -32,8 +33,8 @@ export class PersonalInfoComponent implements OnInit {
     }
   }
 
- createNewUser(){
-  this.userRegistration = new FormGroup({
+  createNewUserPersonalInfo(){
+  this.personalInfoRegistration = new FormGroup({
     "name":new FormControl(null,[Validators.required,Validators.minLength(2),Validators.pattern(/[ა-ჰ]+$/g)]),
     "surname":new FormControl(null,[Validators.required,Validators.minLength(2),Validators.pattern(/[ა-ჰ]+$/g)]),
     "image":new FormControl(null),
@@ -43,10 +44,10 @@ export class PersonalInfoComponent implements OnInit {
   })
  }
  onFormSubmit(){
-  // console.log(this.userRegistration.value);
-  this.registrateUser.addPersonalInfo(this.userRegistration.value)
+  // console.log(this.personalInfoRegistration.value);
+  this.registrateUser.addPersonalInfo(this.personalInfoRegistration.value)
   
-  // this.router.navigate(['experience'])
+  this.router.navigate(['user/experience'])
 
 }
 }

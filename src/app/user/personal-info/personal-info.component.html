@@ -1,5 +1,5 @@
 <article class="personal-info">
-    <form [formGroup]="userRegistration" (ngSubmit)="onFormSubmit()" #form="ngForm"
+    <form [formGroup]="personalInfoRegistration" (ngSubmit)="onFormSubmit()" #form="ngForm"
         class="personal-info__form" >
         <div class="info-type d-flex justify-content-between">
             <h1 class="info-type__title">ᲞᲘᲠᲐᲓᲘ ᲘᲜᲤᲝ</h1>
@@ -52,11 +52,17 @@
             type="tel" class="form-control" placeholder="+995 551 12 34 56">
             <small>უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</small>
         </div>
-        <div class="form-group">
-            <button 
-            routerLink="/experience"
-            routerLinkActive="active"
-            class="btn">ᲨᲔᲛᲓᲔᲒᲘ</button>
+        <div class="inline-form__buttons d-flex justify-content-between">
+            <div class="form-group">
+                <a routerLink=""
+                routerLinkActive="Active"
+                class="btn"
+                >უკან</a>
+            </div>
+            <div class="form-group">
+                <button 
+                class="btn">ᲨᲔᲛᲓᲔᲒᲘ</button>
+            </div>
         </div>
     </form>
 </article>

@@ -1,1 +1,68 @@
-<p>experience works!</p>
+<article class="experience">
+    <form [formGroup]="experienceRegistration" (ngSubmit)="onFormSubmit()" #form="ngForm"
+    class="experience__form">
+    <div class="info-type d-flex justify-content-between">
+        <h1 class="info-type__title">ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</h1>
+        <p class="paging">2/3</p>
+    </div>
+    <article formArrayName="userExperiences">
+        <div *ngFor="let userExperience of getAllUserExperienceInfo().controls; let userExperienceIndex=index" 
+        class="dynamic-experience">
+            <div [formGroupName]="userExperienceIndex">
+                <div class="form-group">
+                    <label for="position">თანამდებობა</label>
+                    <input
+                    formControlName="position"
+                    type="text" class="form-control" placeholder="თანამდებობა">
+                    <small>მინიმუმ 2 სიმბოლო</small>
+                </div>
+                <div class="form-group">
+                    <label for="employer">დამსაქმებელი</label>
+                    <input
+                    formControlName="employer"
+                    type="text" class="form-control" placeholder="დამსაქმებელი">
+                    <small>მინიმუმ 2 სიმბოლო</small>
+                </div>
+                <div class="inline-form-groups">
+                    <div class="form-group">
+                        <label for="startDate">დაწყების რიცხვი</label>
+                        <input
+                        formControlName="startDate"
+                        type="date" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="dueDate">დამთავრების რიცხვი</label>
+                        <input
+                        formControlName="dueDate"
+                        type="date" class="form-control">
+                    </div>
+                </div> <!-- ./inline-form-groups -->
+                <div class="form-group">
+                    <label for="textArea">აღწერა</label>
+                    <textarea 
+                    formControlName="description"
+                    class="form-control" placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"></textarea>
+                </div>
+            </div>
+        </div>
+    </article>
+    <div class="form-group">
+        <button (click)="addNewUserExperience()"
+        class="btn">მეტი გამოცდილების დამატება</button>
+    </div>
+    <div class="inline-form__buttons d-flex justify-content-between">
+        <div class="form-group">
+            <a routerLink="/user"
+            routerLinkActive="Active"
+            class="btn btn-actions"
+            >უკან</a>
+        </div>
+        <div class="form-group">
+            <button 
+            class="btn btn-actions">ᲨᲔᲛᲓᲔᲒᲘ</button>
+        </div>
+    </div>
+    </form>
+</article>
+<!-- *ngFor="let userInfo of getAllUserExperienceInfo().controls; let userInfoIndex=index" -->
+ <!-- [formGroupName]="userInfoIndex" -->
