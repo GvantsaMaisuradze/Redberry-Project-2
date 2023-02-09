@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegistrateUserService } from 'src/app/services/registrate-user.service';
 
@@ -28,6 +28,7 @@ export class PersonalInfoComponent implements OnInit {
     fileReader.readAsDataURL(inp.files[0]);
     fileReader.onload = function(){
       var imageBaseUrl = fileReader.result;
+      // self.personalInfoRegistration = (fileReader.result ?? "").toString();
       console.log(imageBaseUrl)
       
     }

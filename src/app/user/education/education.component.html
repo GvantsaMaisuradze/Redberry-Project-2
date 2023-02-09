@@ -1,1 +1,62 @@
-<p>education works!</p>
+<article class="education">
+    <form  [formGroup]="educationRegistration" (ngSubmit)="onFormSubmit()" #form="ngForm"
+    class="education__form">
+        <div class="info-type d-flex justify-content-between">
+            <h1 class="info-type__title">ᲒᲐᲜᲐᲗᲚᲔᲑᲐ</h1>
+            <p class="paging">3/3</p>
+        </div>
+        <article formArrayName="userEducations">
+            <div *ngFor="let userEducation of getAllUserEducationInfo().controls; let userEducationIndex=index" 
+            class="dynamic-education">
+                <div [formGroupName]="userEducationIndex">
+                    <div class="form-group ">
+                        <label for="institute">სასწავლებელი</label>
+                        <input 
+                        formControlName="institute"
+                        type="text" class="form-control" placeholder="სასწავლებელი">
+                        <small>მინიმუმ 2 სიმბოლო</small>
+                    </div>
+                    <div class="inline-form-groups">
+                        <div class="form-group col-md-12">
+                            <label for="degreeId">ხარისხი</label>
+                            <select 
+                            formControlName="degreeId"
+                            class="form-group form-control form-select" aria-label="Default select example" name="dropdow" id="dropdown" >
+                                <option selected>აირჩიეთ ხარისხი</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="startDate">დამთავრების რიცხვი</label>
+                            <input
+                            formControlName="dueDate"
+                            type="date" class="form-control">
+                        </div>
+                    </div><!-- ./inline-form-groups -->
+                    <div class="form-group">
+                        <label for="textArea">აღწერა</label>
+                        <textarea 
+                        formControlName="description"
+                        class="form-control" placeholder="განათლების აღწერა"></textarea>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <div class="form-group dynamic-button">
+            <button (click)="addNewUserEducation()"
+            class="btn">მეტი გამოცდილების დამატება</button>
+        </div>
+        <div class="inline-form__buttons d-flex justify-content-between">
+            <div class="form-group">
+                <a routerLink="/user/experience"
+                routerLinkActive="Active"
+                class="btn btn-actions"
+                >უკან</a>
+            </div>
+            <div class="form-group">
+                <button 
+                (click)="onClickNextPage()"
+                class="btn btn-actions">ᲓᲐᲡᲠᲣᲚᲔᲑᲐ</button>
+            </div>
+        </div>
+    </form>
+</article>

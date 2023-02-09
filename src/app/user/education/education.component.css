@@ -1,0 +1,85 @@
+.info-type__title{
+    font-weight: 700;
+    font-size: 24px;
+}
+label{
+    font-family:"HelveticaNeue", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    padding-bottom: 9px;
+
+}
+small{
+    font-size: 17px;
+    font-weight: 400;
+    color: #2E2E2E;
+}
+.education{
+    padding-left: 61px;
+
+}
+
+.info-type{
+    padding-bottom: 10px;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #1A1A1A;
+}
+.paging{
+    color: #1A1A1A;
+    font-size: 24px;
+
+}
+.form-control{
+    padding: 15px 16px;
+    margin: 8px 0px;
+}
+.form-group{
+    margin: 29px 0px;
+}
+.inline-form-groups{
+    display: flex;
+    justify-content: space-between;
+}
+.inline-form-groups .form-group{
+    width: 49%;
+    margin-bottom: 0px;
+}
+input,textarea,.form-select{
+    font-size: 22px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.form-select{
+    width: 100%!important;
+    margin-top: 7px;
+    padding: 16px 16px;
+}
+textarea{
+    height: 220px;
+    resize: none;
+    border-radius: 4px;
+}
+.experience__form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.dynamic-education{
+    border-bottom: 1px solid #C1C1C1;
+    padding-bottom: 50px;
+}
+.btn{
+    margin: 115px 0px 65px;
+    color: #ffff;
+    background: #62A1EB;
+    font-size: 21px;
+    padding: 15px 40px;
+    float: left;
+}
+.btn-actions{
+    background: #6B40E3;
+}
+.dynamic-button{
+    display: inline-block;
+}

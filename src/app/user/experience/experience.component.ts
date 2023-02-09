@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { RegistrateUserService } from 'src/app/services/registrate-user.service';
 
 @Component({
   selector: 'app-experience',
@@ -11,7 +12,8 @@ export class ExperienceComponent implements OnInit {
 experienceRegistration!:FormGroup;
 
 
-  constructor(private router:Router,private formBuilder:FormBuilder) {
+  constructor(private router:Router,private formBuilder:FormBuilder,
+    private registrateUser:RegistrateUserService) {
     this.experienceRegistration = this.formBuilder.group({
       userExperiences:this.formBuilder.array([])
     });
@@ -32,6 +34,9 @@ experienceRegistration!:FormGroup;
 
 
   ngOnInit(): void {
+    this.registrateUser.getUserInformationStore().subscribe((response:any) =>{
+      console.log(response)
+    })
   }
 
 
@@ -41,7 +46,9 @@ experienceRegistration!:FormGroup;
     this.getAllUserExperienceInfo().push(this.createNewUserExperienceInfo())
   }
   onFormSubmit(){
-    // this.router.navigate(['user/education'])
-    console.log(this.experienceRegistration.value)
+    this.registrateUser.addExperienceInfo(this.experienceRegistration.value)
+  }
+  onClickNextPage(){
+    this.router.navigate(['user/education'])
   }
 }

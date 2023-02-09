@@ -9,7 +9,10 @@ export class RegistrateInfoReducer {
     static state:UserInformationData = new UserInformationData();
     
     public static Reduce(state=RegistrateInfoReducer.state,action:BaseAction){
-        var tmp = new UserInformationData()
+        var tmp = new UserInformationData();
+        tmp.personalInfoData = state.personalInfoData;
+        tmp.experienceData = state.experienceData;
+        tmp.educationData = state.educationData;
         switch(action.type){
             case RegistrationActionsTypes.addUserData:
                 if(action.payload !=null)
