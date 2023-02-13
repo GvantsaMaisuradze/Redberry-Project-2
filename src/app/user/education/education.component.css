@@ -47,7 +47,7 @@ small{
 }
 input,textarea,.form-select{
     font-size: 22px;
-    color: rgba(0, 0, 0, 0.6);
+    color: #000000;
 }
 .form-select{
     width: 100%!important;

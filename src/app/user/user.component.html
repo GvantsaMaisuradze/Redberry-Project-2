@@ -7,10 +7,11 @@
             </button>
         </div>
         <div class="col-md-11">
-            <router-outlet></router-outlet>
+            <app-personal-info (inpValueChangeEmitter)="inpValueChangeSubscriber($event)"></app-personal-info>
+            <!-- <router-outlet ></router-outlet> -->
         </div> 
     </div> 
         <div class="col-md-5 user-info__area">
-            <app-user-info-area></app-user-info-area>
+            <app-user-info-area [cardItem]="loadingTestItem"></app-user-info-area>
         </div>
 </section>

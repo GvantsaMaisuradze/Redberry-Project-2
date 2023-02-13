@@ -14,6 +14,7 @@ import { UserInfoAreaComponent } from './user/user-info-area/user-info-area.comp
 import { ActionReducer, StoreModule } from '@ngrx/store';
 import { RegistrateInfoReducer } from './state-manager/RegistrateInfo.reducer';
 import { UserInformationData } from './model/UserInformationData.model';
+import { UserCvComponent } from './user/user-cv/user-cv.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { UserInformationData } from './model/UserInformationData.model';
     PersonalInfoComponent,
     ExperienceComponent,
     EducationComponent,
-    UserInfoAreaComponent
+    UserInfoAreaComponent,
+    UserCvComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { PersonalInfo } from 'src/app/model/PersonalInfo.model';
 import { RegistrateUserService } from 'src/app/services/registrate-user.service';
 
 @Component({
@@ -9,8 +10,13 @@ import { RegistrateUserService } from 'src/app/services/registrate-user.service'
   styleUrls: ['./personal-info.component.css']
 })
 export class PersonalInfoComponent implements OnInit {
+  uploadedImg!:any;
+  // personalInfoData:PersonalInfo = new PersonalInfo();
   personalInfoRegistration!:FormGroup;
   constructor(private router:Router, private registrateUser:RegistrateUserService ) { }
+
+  @Output() 
+  inpValueChangeEmitter:EventEmitter<PersonalInfo> = new EventEmitter();
 
   ngOnInit(): void {
     this.createNewUserPersonalInfo();
@@ -18,6 +24,7 @@ export class PersonalInfoComponent implements OnInit {
       console.log(response)
     })
   }
+
   onImageUpload(uploadInput:HTMLInputElement){
     uploadInput.click();
   }
@@ -27,13 +34,12 @@ export class PersonalInfoComponent implements OnInit {
     var fileReader = new FileReader();
     fileReader.readAsDataURL(inp.files[0]);
     fileReader.onload = function(){
-      var imageBaseUrl = fileReader.result;
-      // self.personalInfoRegistration = (fileReader.result ?? "").toString();
-      console.log(imageBaseUrl)
+      self.personalInfoRegistration.value.image = (fileReader.result ?? "").toString();
       
     }
   }
 
+  
   createNewUserPersonalInfo(){
   this.personalInfoRegistration = new FormGroup({
     "name":new FormControl(null,[Validators.required,Validators.minLength(2),Validators.pattern(/[ა-ჰ]+$/g)]),
@@ -44,11 +50,14 @@ export class PersonalInfoComponent implements OnInit {
     "phoneNumber":new FormControl(null,[Validators.required,Validators.pattern("^[+][995]?[0-9]{12}$")]),
   })
  }
+ onInpValueChange(){
+  this.inpValueChangeEmitter.emit(this.personalInfoRegistration.value);
+ }
  onFormSubmit(){
+  // this.personalInfoRegistration.value.image = this.onUploadImageInputChange
   // console.log(this.personalInfoRegistration.value);
   this.registrateUser.addPersonalInfo(this.personalInfoRegistration.value)
   
   this.router.navigate(['user/experience'])
-
 }
 }
