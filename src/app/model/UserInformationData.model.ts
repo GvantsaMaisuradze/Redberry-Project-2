@@ -6,4 +6,7 @@ export class UserInformationData{
     public personalInfoData!:PersonalInfo;
     public experienceData!:Experience;
     public educationData!:Education;
-}
+};
+export type UserInfo={
+    userInfo:PersonalInfo | Experience | Education
+};
