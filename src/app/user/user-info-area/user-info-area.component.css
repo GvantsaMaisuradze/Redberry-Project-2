@@ -1,7 +1,51 @@
 .user-info__area{
+    padding: 68px 75px 0px 0px;
     margin-left: 78px;
+    font-size: 20px;
+
 }
 .user-info-image{
     position: absolute;
     bottom: 44px;
+}
+.inline-form-groups{
+    display: flex;
+    margin-bottom: 20px;
+    color: #F93B1D;
+    font-size: 34px;
+    font-weight: 700;
+}
+.name{
+    margin-right: 20px;
+}
+h3{
+    color: #F93B1D;
+}
+.user-info__top{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #C8C8C8;
+}
+.user-info__left{
+    width: 70%;
+}
+.user-profale-image{
+    width: 30%;
+}
+.user-image{
+    width: 246px;
+    height: 246px; 
+    overflow:hidden;
+    border-radius: 50%;
+}
+.user-info_icons{
+    margin-right: 15px;
+}
+image{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+.phoneNumber{
+    margin-bottom: 35px;
 }

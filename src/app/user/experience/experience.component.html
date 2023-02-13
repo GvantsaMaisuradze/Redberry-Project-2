@@ -11,14 +11,14 @@
             <div [formGroupName]="userExperienceIndex">
                 <div class="form-group">
                     <label for="position">თანამდებობა</label>
-                    <input
+                    <input (ngModelChange)="onInpValueChange()"
                     formControlName="position"
                     type="text" class="form-control" placeholder="თანამდებობა">
                     <small>მინიმუმ 2 სიმბოლო</small>
                 </div>
                 <div class="form-group">
                     <label for="employer">დამსაქმებელი</label>
-                    <input
+                    <input (ngModelChange)="onInpValueChange()"
                     formControlName="employer"
                     type="text" class="form-control" placeholder="დამსაქმებელი">
                     <small>მინიმუმ 2 სიმბოლო</small>
@@ -26,13 +26,13 @@
                 <div class="inline-form-groups">
                     <div class="form-group">
                         <label for="startDate">დაწყების რიცხვი</label>
-                        <input
+                        <input (ngModelChange)="onInpValueChange()"
                         formControlName="startDate"
                         type="date" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="dueDate">დამთავრების რიცხვი</label>
-                        <input
+                        <input (ngModelChange)="onInpValueChange()"
                         formControlName="dueDate"
                         type="date" class="form-control">
                     </div>

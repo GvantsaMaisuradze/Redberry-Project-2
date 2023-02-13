@@ -1,7 +1,37 @@
 <article class="user-info__area">
     <div class="user-information">
+        <div class="user-info__top">
+            <div class="user-info__left">
+                <div class="inline-form-groups">
+                    <h2 class="name">{{user.name}}</h2>
+                    <h2 class="surname">{{user.surname}}</h2>
+                </div>
+                <div class="email d-flex">
+                    <figure class="user-info_icons">
+                        <img src="assets/Images/Vector3.svg" alt="@">
+                    </figure>
+                    <p>{{user.email}}</p>
+                </div>
+                <div class="phoneNumber d-flex">
+                    <figure class="user-info_icons">
+                        <img src="assets/Images/Vector (1).svg" alt="phone-logo">
+                    </figure>
+                    <p>{{user.phoneNumber}}</p>
+                </div>
+                <div class="form-group about">
+                    <h3>ᲩᲔᲛ ᲨᲔᲡᲐᲮᲔᲑ</h3>
+                    <p>{{user.aboutMe}}</p>
+                </div>
+            </div>
+            <div class="user-profale-image d-inline-block">
+                <figure class="user-image">
+                    <img [src]="user.image" alt="">
+                </figure>
+            </div>
+        </div>
+        <p></p>
     </div>
-    <p>{{cardItem.name}}</p>
+    
     <div class="user-info-image">
         <figure>
             <img src="/assets/Images/LOGO-12 1.svg" alt="">

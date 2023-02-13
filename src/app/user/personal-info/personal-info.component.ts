@@ -1,28 +1,31 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { PersonalInfo } from 'src/app/model/PersonalInfo.model';
 import { RegistrateUserService } from 'src/app/services/registrate-user.service';
+import { UserServiceService } from 'src/app/services/user-service.service';
 
 @Component({
   selector: 'app-personal-info',
   templateUrl: './personal-info.component.html',
-  styleUrls: ['./personal-info.component.css']
+  styleUrls: ['./personal-info.component.css'],
 })
 export class PersonalInfoComponent implements OnInit {
+  editUser!:string;
   uploadedImg!:any;
-  // personalInfoData:PersonalInfo = new PersonalInfo();
   personalInfoRegistration!:FormGroup;
-  constructor(private router:Router, private registrateUser:RegistrateUserService ) { }
+  constructor(private router:Router, private registrateUser:RegistrateUserService,
+    private userService:UserServiceService ) { }
 
-  @Output() 
-  inpValueChangeEmitter:EventEmitter<PersonalInfo> = new EventEmitter();
 
   ngOnInit(): void {
     this.createNewUserPersonalInfo();
     this.registrateUser.getUserInformationStore().subscribe((response:any) =>{
       console.log(response)
     })
+  }
+
+  onInpValueChange(){
+    this.userService.raiseDataEmitter(this.personalInfoRegistration.value)
   }
 
   onImageUpload(uploadInput:HTMLInputElement){
@@ -45,14 +48,12 @@ export class PersonalInfoComponent implements OnInit {
     "name":new FormControl(null,[Validators.required,Validators.minLength(2),Validators.pattern(/[ა-ჰ]+$/g)]),
     "surname":new FormControl(null,[Validators.required,Validators.minLength(2),Validators.pattern(/[ა-ჰ]+$/g)]),
     "image":new FormControl(null),
-    "about":new FormControl(null),
+    "aboutMe":new FormControl(null),
     "email":new FormControl(null,[Validators.required,Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[redberry.-]+\\.[ge]{2,4}$')]),
     "phoneNumber":new FormControl(null,[Validators.required,Validators.pattern("^[+][995]?[0-9]{12}$")]),
   })
  }
- onInpValueChange(){
-  this.inpValueChangeEmitter.emit(this.personalInfoRegistration.value);
- }
+
  onFormSubmit(){
   // this.personalInfoRegistration.value.image = this.onUploadImageInputChange
   // console.log(this.personalInfoRegistration.value);
@@ -61,3 +62,4 @@ export class PersonalInfoComponent implements OnInit {
   this.router.navigate(['user/experience'])
 }
 }
+

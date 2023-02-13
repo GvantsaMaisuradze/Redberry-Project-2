@@ -9,16 +9,14 @@
         <div class="inline-form-groups">
             <div class="form-group">
                 <label for="name">სახელი</label>
-                <input 
-                (change)="onInpValueChange()"
+                <input (ngModelChange)="onInpValueChange()"
                 formControlName="name"
                 type="text" class="form-control" placeholder="ანზორ">
                 <small>მინიმუმ 2 ასო, ქართული ასოები</small>
             </div>
             <div class="form-group">
                 <label for="surname">გვარი</label>
-                <input 
-                (change)="onInpValueChange()"
+                <input (ngModelChange)="onInpValueChange()"
                 formControlName="surname"
                 type="text" class="form-control" placeholder="მუმლაძე">
                 <small>მინიმუმ 2 ასო, ქართული ასოები</small>
@@ -26,8 +24,7 @@
         </div>
         <div class="form-group">
             <label class="image" for="image">პირადი ფოტოს ატვირთვა</label>
-            <input 
-            (change)="onInpValueChange()"
+            <input (ngModelChange)="onInpValueChange()"
             formControlName="image"
             (change)="onUploadImageInputChange($event)" 
             #uploadInp type="file" class="d-none">
@@ -36,25 +33,23 @@
             (click)="onImageUpload(uploadInp)"
             class="upload-image">ატვირთვა</button>
         </div>
-        <img *ngIf="personalInfoRegistration.value.image" [src]="personalInfoRegistration.value.image">
         <div class="form-group">
             <label for="textArea">ჩემ შესახებ (არასავალდებულო)</label>
-            <textarea 
-            formControlName="about"
+            <textarea  
+            (ngModelChange)="onInpValueChange()"
+            formControlName="aboutMe"
             class="form-control" placeholder="ზოგადი ინფო შენ შესახებ"></textarea>
         </div>
         <div class="form-group">
             <label for="email">ელ.ფოსტა</label>
-            <input 
-            (change)="onInpValueChange()"
+            <input (ngModelChange)="onInpValueChange()"
             formControlName="email"
             type="email" class="form-control" placeholder="anzorr666@redberry.ge">
             <small>უნდა მთავრდებოდეს @redberry.ge-ით</small>
         </div>
         <div class="form-group">
             <label for="phoneNumber">მობილურის ნომერი</label>
-            <input 
-            (change)="onInpValueChange()"
+            <input (ngModelChange)="onInpValueChange()"
             formControlName="phoneNumber"
             type="tel" class="form-control" placeholder="+995 551 12 34 56">
             <small>უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</small>

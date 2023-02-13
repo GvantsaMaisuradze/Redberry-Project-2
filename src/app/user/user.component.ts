@@ -8,7 +8,6 @@ import { UserInformationData } from '../model/UserInformationData.model';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  loadingTestItem:PersonalInfo = new PersonalInfo();
   constructor(private router:Router) { }
 
   ngOnInit(): void {
@@ -17,9 +16,7 @@ export class UserComponent implements OnInit {
   goBackToHomePage(){
     this.router.navigate([''])
   }
-  inpValueChangeSubscriber(event:any){
-    this.loadingTestItem=event;
-  }
+
 
 
 

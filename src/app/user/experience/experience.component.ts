@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegistrateUserService } from 'src/app/services/registrate-user.service';
+import { UserServiceService } from 'src/app/services/user-service.service';
 
 @Component({
   selector: 'app-experience',
@@ -13,11 +14,16 @@ experienceRegistration!:FormGroup;
 
 
   constructor(private router:Router,private formBuilder:FormBuilder,
-    private registrateUser:RegistrateUserService) {
+    private registrateUser:RegistrateUserService,
+    private userService:UserServiceService) {
     this.experienceRegistration = this.formBuilder.group({
       userExperiences:this.formBuilder.array([])
     });
    }
+   onInpValueChange(){
+    this.userService.raiseDataEmitter(this.experienceRegistration.value)
+  }
+
    getAllUserExperienceInfo():FormArray{
     return this.experienceRegistration.get("userExperiences") as FormArray
    }

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { delay } from 'rxjs';
 import { addEducation, addExperience, addPersonalInfo, addUserData } from '../actions/registrationAction';
 import { UserInformationData } from '../model/UserInformationData.model';
 

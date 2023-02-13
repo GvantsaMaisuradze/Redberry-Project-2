@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Experience } from 'src/app/model/Experience.model';
 import { PersonalInfo } from 'src/app/model/PersonalInfo.model';
 import { UserInformationData } from 'src/app/model/UserInformationData.model';
 import { RegistrateUserService } from 'src/app/services/registrate-user.service';
+import { UserServiceService } from 'src/app/services/user-service.service';
 
 @Component({
   selector: 'app-user-info-area',
@@ -9,15 +11,16 @@ import { RegistrateUserService } from 'src/app/services/registrate-user.service'
   styleUrls: ['./user-info-area.component.css']
 })
 export class UserInfoAreaComponent implements OnInit {
-  @Input()
-  cardItem:PersonalInfo = new PersonalInfo();
+  user!:PersonalInfo;
   
   userInformationData:UserInformationData = new UserInformationData();
-  constructor( private registrateUser:RegistrateUserService) { }
+  constructor( private registrateUser:RegistrateUserService,
+    private userService:UserServiceService) { }
+
+
   ngOnInit(): void {
-    this.registrateUser.getUserInformationStore().subscribe((response:any) =>{
-    this.userInformationData = response
+    this.userService.dataEmitter.subscribe((response:any)=>{
+      this.user = response;
     })
   }
-
 }
