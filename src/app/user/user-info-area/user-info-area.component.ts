@@ -13,7 +13,7 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 })
 export class UserInfoAreaComponent implements OnInit {
   
-  user!:UserInfo;
+  user!:PersonalInfo;
   
   userInformationData:UserInformationData = new UserInformationData();
   constructor( private registrateUser:RegistrateUserService,
