@@ -83,3 +83,16 @@ textarea{
 .dynamic-button{
     display: inline-block;
 }
+input.ng-invalid.ng-touched{
+    border:1px solid red;
+}
+input.ng-valid.ng-touched{
+    border:1px solid #98E37E;
+    -webkit-appearance: none;
+
+    background-image: url("/assets/Images/success.svg");
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 20px;
+
+}
