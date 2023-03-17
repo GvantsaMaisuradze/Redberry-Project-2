@@ -21,7 +21,7 @@ experienceRegistration!:FormGroup;
     });
    }
    onInpValueChange(){
-    this.userService.raiseDataEmitter(this.experienceRegistration.value)
+    this.userService.raiseExperienceDataEmitter(this.experienceRegistration.value)
   }
 
    getAllUserExperienceInfo():FormArray{

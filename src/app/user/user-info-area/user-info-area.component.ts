@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Education } from 'src/app/model/Educatuin.model';
 import { Experience } from 'src/app/model/Experience.model';
 import { PersonalInfo } from 'src/app/model/PersonalInfo.model';
-import { UserInfo, UserInformationData } from 'src/app/model/UserInformationData.model';
+import { UserInformationData } from 'src/app/model/UserInformationData.model';
 import { RegistrateUserService } from 'src/app/services/registrate-user.service';
 import { UserServiceService } from 'src/app/services/user-service.service';
 
@@ -14,6 +13,7 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 export class UserInfoAreaComponent implements OnInit {
   
   user!:PersonalInfo;
+  experience!:Experience;
   
   userInformationData:UserInformationData = new UserInformationData();
   constructor( private registrateUser:RegistrateUserService,
@@ -23,6 +23,9 @@ export class UserInfoAreaComponent implements OnInit {
   ngOnInit(): void {
     this.userService.dataEmitter.subscribe((response:any)=>{
       this.user = response;
+    })
+    this.userService.experienceDataEmitter.subscribe((response:any)=>{
+      this.experience = response
     })
   }
 }
